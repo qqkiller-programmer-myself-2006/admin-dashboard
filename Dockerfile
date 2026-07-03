@@ -13,6 +13,7 @@ COPY . .
 RUN npm run build
 
 FROM base AS runner
+RUN apk add --no-cache wget
 WORKDIR /app
 ENV NODE_ENV=production
 ENV HOSTNAME=0.0.0.0
